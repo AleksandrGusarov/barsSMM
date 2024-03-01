@@ -1,0 +1,79 @@
+.footer {
+	padding: 100px 0;
+	background: rgb(121, 137, 146);
+}
+
+.footer__container {
+	display: flex;
+	align-items: center;
+	gap: 10%;
+}
+
+.footer__wrapper {
+	display: flex;
+	gap: 150px;
+}
+
+.footer__menu-link:hover {
+	color: #c65307;
+	transition: color 0.2s ease-out;
+}
+
+.footer .button__phone {
+	border: 1px solid #000;
+	border-radius: 10px;
+	padding: 5px 10px;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.footer .button__phone .icon__phone {
+	height: 22px;
+}
+
+.footer .button__phone .icon__phone svg {
+	width: 22px;
+	height: 22px;
+}
+
+.footer .button__phone:hover {
+	background-color: #b84d08;
+	transition: all 0.35s ease-in-out;
+}
+
+.footer .button__phone:hover .icon__phone svg {
+	color: #fff;
+}
+
+.footer .button__phone:hover .button__phone-description {
+	color: #fff;
+}
+
+.footer__menu-extra {
+	font-size: 20px;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.footer__icon {
+	width: 24px;
+	height: 24px;
+}
+
+.footer__icon svg {
+	width: 24px;
+	height: 24px;
+}
+
+.footer__icon:hover svg {
+	color: #b84d08;
+	transition: all 0.35s ease-in-out;
+}
+
+.mb-15 {
+	margin-bottom: 20px;
+}
+
+/*# sourceMappingURL=main.css.map */

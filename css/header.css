@@ -1,0 +1,334 @@
+@charset "UTF-8";
+
+body {
+	position: relative;
+}
+
+.navigation {
+	background: transparent;
+	z-index: 1;
+	position: fixed;
+	height: 90px;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	transition: 1s ease-in-out;
+}
+
+.navigation-extra {
+	background-color: rgba(121, 137, 146, 0.8) !important;
+	z-index: 5;
+}
+
+.navigation__wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 60px;
+	padding-top: 4px;
+}
+
+.navigation__logo {
+	width: 6%;
+	min-width: 50px;
+}
+
+.navigation__logo img {
+	width: 100%;
+	height: 100%;
+}
+
+.navigation .nav__list {
+	display: flex;
+	gap: 15px;
+}
+
+.navigation .nav__list .nav__item {
+	padding: 5px 10px;
+}
+
+.navigation .nav__list .nav__item a {
+	font-size: 24px;
+}
+
+.navigation .nav__list .nav__item:hover {
+	background-color: rgba(184, 77, 8, 0.9);
+	border-radius: 5px 5px 0 0;
+	transition: all 0.3s ease-in-out;
+}
+
+.navigation .nav__list .nav__item:hover a {
+	color: #fff;
+	transition: color 0.3s ease-in-out;
+}
+
+.navigation .nav__list .link__service {
+	position: relative;
+}
+
+.navigation .nav__list .link__service a {
+	color: #000;
+}
+
+.navigation .nav__list .link__service .nav__sub-services {
+	background-color: rgba(184, 77, 8, 0.9);
+	margin-top: unset;
+	padding: 10px;
+	left: 0;
+	top: 46px;
+	border-radius: 0 5px 5px 5px;
+	color: #000;
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	transform: translateY(5px);
+	transition: all 0.2s ease-in-out;
+	width: 545px;
+}
+
+.navigation .nav__list .link__service .nav__sub-services a {
+	border-left: 1px solid rgba(255, 255, 255, 0.631372549);
+	padding: 2px 0 2px 15px;
+	font-size: 18px;
+	white-space: nowrap;
+}
+
+.navigation .nav__list .link__service .nav__sub-services .services__link {
+	position: relative;
+	text-decoration: none;
+	color: rgba(255, 255, 255, 0.631372549);
+}
+
+.navigation .nav__list .link__service:hover .nav__sub-services {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+	transition: 0.2s ease-in-out;
+}
+
+.navigation .nav__list .link__service .services__link:hover {
+	color: #fff;
+	border-left: 1px solid #fff;
+	transition: 0.1s ease-in-out;
+}
+
+.navigation__contact,
+.contact {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.navigation__contact a,
+.contact a {
+	font-size: 18px;
+}
+
+.navigation__contact__button,
+.contact__button {
+	background: transparent;
+	border: 1px solid #000;
+	border-radius: 10px;
+	padding: 5px 10px;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	z-index: 3;
+	position: relative;
+}
+
+.navigation__contact__button:hover,
+.contact__button:hover {
+	background-color: #b84d08;
+	transition: all 0.35s ease-in-out;
+}
+
+.navigation__contact__button:hover .contact__icon svg,
+.contact__button:hover .contact__icon svg {
+	color: #fff;
+}
+
+.navigation__contact__button:hover .contact__description,
+.contact__button:hover .contact__description {
+	color: #fff;
+}
+
+.navigation__contact__icon,
+.contact__icon {
+	height: 22px;
+}
+
+.navigation__contact__icon svg,
+.contact__icon svg {
+	width: 22px;
+	height: 22px;
+}
+
+.navigation__contact__description,
+.contact__description {
+	font-size: 18px;
+	line-height: 130%;
+}
+
+.navigation__contact .menu-item,
+.contact .menu-item {
+	position: absolute;
+	background: transparent;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	left: 10px;
+	top: 0;
+	width: 30px;
+	height: 30px;
+	color: #000;
+	text-align: center;
+	line-height: 60px;
+	opacity: 0;
+	z-index: -1;
+	transform: translate3d(0, 0, 0);
+	transition: transform ease-out 200ms, opacity ease-out 200ms;
+}
+
+.navigation__contact .menu-item:hover,
+.contact .menu-item:hover {
+	background: #b84d08;
+}
+
+.navigation__contact .menu-item:hover .menu-icon,
+.contact .menu-item:hover .menu-icon {
+	color: #fff;
+}
+
+.navigation__contact .menu-item:hover .navigation__contact__button,
+.navigation__contact .menu-item:hover .contact__button,
+.contact .menu-item:hover .navigation__contact__button,
+.contact .menu-item:hover .contact__button {
+	background: transparent;
+}
+
+.navigation__contact .menu-item .menu-icon,
+.contact .menu-item .menu-icon {
+	display: flex;
+	width: 18px;
+	height: 18px;
+	color: #000;
+}
+
+.navigation__contact .menu-item .menu-icon svg,
+.contact .menu-item .menu-icon svg {
+	width: 100%;
+	height: 100%;
+}
+
+.navigation__contact .menu-open,
+.contact .menu-open {
+	display: none;
+}
+
+.navigation__contact .menu-open-button,
+.contact .menu-open-button {
+	z-index: 2;
+	cursor: pointer;
+}
+
+.navigation__contact .menu-open-button.hide,
+.contact .menu-open-button.hide {
+	opacity: 0;
+	transform: scaleX(0);
+	transform-origin: left center;
+	transition: opacity 1s ease-out, transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.navigation__contact .menu-item.show,
+.contact .menu-item.show {
+	opacity: 1;
+	border: 1px solid #000;
+	transform: translate3d(0, -50px, 0);
+	transition: transform ease-out 200ms, opacity ease-out 200ms;
+	z-index: 5;
+}
+
+.navigation__contact .item-1.show,
+.contact .item-1.show {
+	transition-duration: 180ms;
+	transform: translate3d(45px, 2px, 0);
+}
+
+.navigation__contact .item-2.show,
+.contact .item-2.show {
+	transition-duration: 280ms;
+	transform: translate3d(85px, 2px, 0);
+}
+
+.navigation__contact .item-3.show,
+.contact .item-3.show {
+	transition-duration: 380ms;
+	transform: translate3d(125px, 2px, 0);
+}
+
+.navigation__contact .menu-close-button,
+.contact .menu-close-button {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 35px;
+	height: 35px;
+	background-color: transparent;
+	border: 1px solid #000;
+	border-radius: 50%;
+	overflow: hidden;
+	cursor: pointer;
+	display: none;
+}
+
+.navigation__contact .menu-close-button span:first-of-type,
+.contact .menu-close-button span:first-of-type {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 20px;
+	height: 2px;
+	background: #000;
+	transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.navigation__contact .menu-close-button span:nth-of-type(2),
+.contact .menu-close-button span:nth-of-type(2) {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 20px;
+	height: 2px;
+	background: #000;
+	transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.navigation__contact .menu-close-button:hover,
+.contact .menu-close-button:hover {
+	background: #b84d08;
+}
+
+.navigation__contact .menu-close-button:hover span,
+.contact .menu-close-button:hover span {
+	background: #fff;
+}
+
+.navigation__contact .menu-close-button.show,
+.contact .menu-close-button.show {
+	display: block;
+}
+.navigation.scrolled {
+	background-color: rgba(121, 137, 146, 0.73);
+	z-index: 3;
+	/* Добавляем тень при прокрутке */
+}
+
+.navigation.scrolled .nav__link {
+	color: #000;
+	/* Новый цвет текста ссылок */
+}

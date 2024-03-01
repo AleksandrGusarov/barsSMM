@@ -1,0 +1,618 @@
+@charset "UTF-8";
+body {
+  position: relative;
+}
+
+.navigation {
+  background: transparent;
+  z-index: 1;
+  position: fixed;
+  height: 90px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 1s ease-in-out;
+}
+.navigation__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 60px;
+  padding-top: 4px;
+}
+.navigation__logo {
+  width: 6%;
+  min-width: 50px;
+}
+.navigation__logo img {
+  width: 100%;
+  height: 100%;
+}
+.navigation .nav__list {
+  display: flex;
+  gap: 15px;
+}
+.navigation .nav__list .nav__item {
+  padding: 5px 10px;
+}
+.navigation .nav__list .nav__item a {
+  font-size: 24px;
+}
+.navigation .nav__list .nav__item:hover {
+  background-color: rgba(184, 77, 8, 0.8);
+  border-radius: 5px 5px 0 0;
+  transition: all 0.3s ease-in-out;
+}
+.navigation .nav__list .nav__item:hover a {
+  color: #fff;
+  transition: color 0.3s ease-in-out;
+}
+.navigation .nav__list .link__service {
+  position: relative;
+}
+.navigation .nav__list .link__service a {
+  color: #000;
+}
+.navigation .nav__list .link__service .nav__sub-services {
+  background-color: rgba(184, 77, 8, 0.8);
+  margin-top: unset;
+  padding: 10px;
+  left: 0;
+  top: 46px;
+  border-radius: 0 5px 5px 5px;
+  color: #000;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  transform: translateY(5px);
+  transition: all 0.2s ease-in-out;
+  width: 545px;
+}
+.navigation .nav__list .link__service .nav__sub-services a {
+  border-left: 1px solid rgba(255, 255, 255, 0.631372549);
+  padding: 2px 0 2px 15px;
+  font-size: 18px;
+  white-space: nowrap;
+}
+.navigation .nav__list .link__service .nav__sub-services .services__link {
+  position: relative;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.631372549);
+}
+.navigation .nav__list .link__service:hover .nav__sub-services {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: 0.2s ease-in-out;
+}
+.navigation .nav__list .link__service .services__link:hover {
+  color: #fff;
+  border-left: 1px solid #fff;
+  transition: 0.1s ease-in-out;
+}
+
+.navigation__contact,
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.navigation__contact a,
+.contact a {
+  font-size: 18px;
+}
+.navigation__contact__button,
+.contact__button {
+  background: transparent;
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  z-index: 3;
+  position: relative;
+}
+.navigation__contact__button:hover,
+.contact__button:hover {
+  background-color: #b84d08;
+  transition: all 0.35s ease-in-out;
+}
+.navigation__contact__button:hover .contact__icon svg,
+.contact__button:hover .contact__icon svg {
+  color: #fff;
+}
+.navigation__contact__button:hover .contact__description,
+.contact__button:hover .contact__description {
+  color: #fff;
+}
+.navigation__contact__icon,
+.contact__icon {
+  height: 22px;
+}
+.navigation__contact__icon svg,
+.contact__icon svg {
+  width: 22px;
+  height: 22px;
+}
+.navigation__contact__description,
+.contact__description {
+  font-size: 18px;
+  line-height: 130%;
+}
+.navigation__contact .menu-item,
+.contact .menu-item {
+  position: absolute;
+  background: transparent;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 10px;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  color: #000;
+  text-align: center;
+  line-height: 60px;
+  opacity: 0;
+  z-index: -1;
+  transform: translate3d(0, 0, 0);
+  transition: transform ease-out 200ms, opacity ease-out 200ms;
+}
+.navigation__contact .menu-item:hover,
+.contact .menu-item:hover {
+  background: #b84d08;
+}
+.navigation__contact .menu-item:hover .menu-icon,
+.contact .menu-item:hover .menu-icon {
+  color: #fff;
+}
+.navigation__contact .menu-item:hover .navigation__contact__button,
+.navigation__contact .menu-item:hover .contact__button,
+.contact .menu-item:hover .navigation__contact__button,
+.contact .menu-item:hover .contact__button {
+  background: transparent;
+}
+.navigation__contact .menu-item .menu-icon,
+.contact .menu-item .menu-icon {
+  display: flex;
+  width: 18px;
+  height: 18px;
+  color: #000;
+}
+.navigation__contact .menu-item .menu-icon svg,
+.contact .menu-item .menu-icon svg {
+  width: 100%;
+  height: 100%;
+}
+.navigation__contact .menu-open,
+.contact .menu-open {
+  display: none;
+}
+.navigation__contact .menu-open-button,
+.contact .menu-open-button {
+  z-index: 2;
+  cursor: pointer;
+}
+.navigation__contact .menu-open-button.hide,
+.contact .menu-open-button.hide {
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: opacity 1s ease-out, transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.navigation__contact .menu-item.show,
+.contact .menu-item.show {
+  opacity: 1;
+  border: 1px solid #000;
+  transform: translate3d(0, -50px, 0);
+  transition: transform ease-out 200ms, opacity ease-out 200ms;
+  z-index: 5;
+}
+.navigation__contact .item-1.show,
+.contact .item-1.show {
+  transition-duration: 180ms;
+  transform: translate3d(45px, 2px, 0);
+}
+.navigation__contact .item-2.show,
+.contact .item-2.show {
+  transition-duration: 280ms;
+  transform: translate3d(85px, 2px, 0);
+}
+.navigation__contact .item-3.show,
+.contact .item-3.show {
+  transition-duration: 380ms;
+  transform: translate3d(185px, 2px, 0);
+}
+.navigation__contact .menu-close-button,
+.contact .menu-close-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 35px;
+  height: 35px;
+  background-color: transparent;
+  border: 1px solid #000;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  display: none;
+}
+.navigation__contact .menu-close-button span:first-of-type,
+.contact .menu-close-button span:first-of-type {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 2px;
+  background: #000;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.navigation__contact .menu-close-button span:nth-of-type(2),
+.contact .menu-close-button span:nth-of-type(2) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 2px;
+  background: #000;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.navigation__contact .menu-close-button:hover,
+.contact .menu-close-button:hover {
+  background: #b84d08;
+}
+.navigation__contact .menu-close-button:hover span,
+.contact .menu-close-button:hover span {
+  background: #fff;
+}
+.navigation__contact .menu-close-button.show,
+.contact .menu-close-button.show {
+  display: block;
+}
+
+.navigation.scrolled {
+  background-color: rgba(121, 137, 146, 0.73);
+  z-index: 3;
+  /* Добавляем тень при прокрутке */
+}
+
+.navigation.scrolled .nav__link {
+  color: #000;
+  /* Новый цвет текста ссылок */
+}
+
+.main .banner {
+  background-image: url(../img/promo-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-height: 1274px;
+  background-position: center;
+  height: 103vh;
+  overflow: hidden;
+  margin-top: -210px;
+  padding: 300px 0 0 0;
+  position: relative;
+  transform: scale(-1, 1);
+}
+.main .banner__wrapper-title {
+  position: relative;
+  max-width: 42%;
+  top: 150px;
+  left: 54%;
+  z-index: 1;
+  transform: scale(-1, 1);
+}
+.main .banner__title {
+  font-size: 48px;
+  line-height: 130%;
+  white-space: pre-line;
+  color: #fff;
+  text-shadow: 0 0 2px #000;
+}
+.main .banner__card-wrapper {
+  position: absolute;
+  max-width: 700px;
+  left: 9%;
+  top: 36%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transform: scale(-1, 1);
+}
+.main .banner__card {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  transform: translateX(500px);
+  opacity: 0;
+  transition: 2s ease;
+}
+.main .banner__card-expertise.anim.active {
+  transform: translateX(0);
+  opacity: 1;
+  transition-delay: 0.5s;
+}
+.main .banner__card-innovation.anim.active {
+  transform: translateX(0);
+  opacity: 1;
+  transition-delay: 0.8s;
+}
+.main .banner__card-personalization.anim.active {
+  transform: translateX(0);
+  opacity: 1;
+  transition-delay: 1.1s;
+}
+.main .banner__card-security.anim.active {
+  transform: translateX(0);
+  opacity: 1;
+  transition-delay: 1.4s;
+}
+.main .banner__card-icon {
+  width: 50px;
+}
+.main .banner__card-icon svg {
+  width: 100%;
+  height: 100%;
+}
+.main .banner__card-icon-innovation {
+  width: 80px;
+  position: relative;
+  left: -2%;
+}
+.main .banner__card-icon-innovation svg {
+  max-width: 200%;
+  height: 100%;
+}
+.main .banner__card-title-wrapper {
+  max-width: 85%;
+  position: relative;
+  right: 5%;
+}
+.main .banner__card-title {
+  font-size: 22px;
+  font-weight: 600;
+}
+.main .banner__card-description {
+  font-size: 18px;
+  line-height: 120%;
+}
+.main .services {
+  background-image: url(../img/vladimir-kudinov-rRmehRk9zx0-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  position: relative;
+}
+.main .services::after {
+  z-index: 3;
+  content: " ";
+  position: absolute;
+  background: #000;
+  box-shadow: 0 0 43px 36px #000;
+  width: 100%;
+  top: -13px;
+  height: 10px;
+}
+.main .services__wrapper {
+  position: relative;
+  min-height: 900px;
+}
+.main .services__wrapper-sticky,
+.main .services .builder {
+  height: 560px;
+  width: 150px;
+  position: relative;
+  left: 65%;
+  top: -110px;
+  z-index: 1;
+}
+.main .services__wrapper-sticky__sticky,
+.main .services .builder__sticky {
+  background-image: url(../img/vivaldi-2.png);
+  background-repeat: no-repeat;
+  background-position: 47% 28%;
+  background-size: 600px;
+  z-index: 4;
+  height: 175px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(-20px);
+  /* Изначально поднимаем элемент на 20px */
+  transition: opacity 0.5s ease, transform 1.2s ease;
+}
+.main .services__wrapper-sticky__wrapper-card,
+.main .services .builder__wrapper-card {
+  top: 15%;
+  left: 10%;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  gap: 21px;
+  width: 80%;
+  height: 48%;
+  flex-wrap: wrap;
+}
+.main .services__wrapper-sticky__card-inner-left, .main .services__wrapper-sticky__card-inner-right,
+.main .services .builder__card-inner-left,
+.main .services .builder__card-inner-right {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  transition: 2s ease;
+}
+.main .services__wrapper-sticky__card-inner-left.anim,
+.main .services .builder__card-inner-left.anim {
+  transform: translateX(-170px);
+  opacity: 0;
+}
+.main .services__wrapper-sticky__card-inner-left.anim.active,
+.main .services .builder__card-inner-left.anim.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+.main .services__wrapper-sticky__card-inner-right.anim,
+.main .services .builder__card-inner-right.anim {
+  transform: translateX(170px);
+  opacity: 0;
+}
+.main .services__wrapper-sticky__card-inner-right.anim.active,
+.main .services .builder__card-inner-right.anim.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+.main .services__wrapper-sticky__card,
+.main .services .builder__card {
+  border: 1px solid transparent;
+  padding: 15px;
+  border-radius: 15px;
+  max-width: 350px;
+  width: 100%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+}
+.main .services__wrapper-sticky__card-title,
+.main .services .builder__card-title {
+  color: #fff;
+  margin-bottom: 25px;
+  font-style: 26px;
+  font-weight: 400;
+}
+.main .services__wrapper-sticky__card-link,
+.main .services .builder__card-link {
+  color: #fff;
+  font-style: 18px;
+}
+.main .personal {
+  padding: 0;
+  position: relative;
+}
+.main .personal__wrapper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(180deg, rgb(74, 45, 40) 43%, rgb(74, 50, 46) 49%, rgb(121, 137, 146) 100%, rgb(121, 137, 146) 88%);
+  box-shadow: 0 -46px 15px 8px rgb(74, 45, 40);
+}
+.main .personal__container {
+  position: relative;
+  z-index: 2;
+}
+.main .personal__title {
+  color: #fff;
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.main .personal__description {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 120%;
+  color: #fff;
+  white-space: pre-line;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.main .personal__wrapper-team,
+.main .personal .team {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.main .personal__wrapper-team__card,
+.main .personal .team__card {
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #fff;
+}
+.main .personal__wrapper-team__img,
+.main .personal .team__img {
+  width: 100%;
+}
+.main .personal__wrapper-team__title,
+.main .personal .team__title {
+  margin-bottom: 15px;
+}
+
+.footer {
+  padding: 100px 0;
+  background: rgb(121, 137, 146);
+}
+.footer__container {
+  display: flex;
+  align-items: center;
+  gap: 10%;
+}
+.footer__wrapper {
+  display: flex;
+  gap: 150px;
+}
+.footer__menu-link:hover {
+  color: #c65307;
+  transition: color 0.2s ease-out;
+}
+.footer .button__phone {
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.footer .button__phone .icon__phone {
+  height: 22px;
+}
+.footer .button__phone .icon__phone svg {
+  width: 22px;
+  height: 22px;
+}
+.footer .button__phone:hover {
+  background-color: #b84d08;
+  transition: all 0.35s ease-in-out;
+}
+.footer .button__phone:hover .icon__phone svg {
+  color: #fff;
+}
+.footer .button__phone:hover .button__phone-description {
+  color: #fff;
+}
+.footer__menu-extra {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.footer__icon {
+  width: 24px;
+  height: 24px;
+}
+.footer__icon svg {
+  width: 24px;
+  height: 24px;
+}
+.footer__icon:hover svg {
+  color: #b84d08;
+  transition: all 0.35s ease-in-out;
+}
+
+.mb-15 {
+  margin-bottom: 20px;
+}/*# sourceMappingURL=main.css.map */
