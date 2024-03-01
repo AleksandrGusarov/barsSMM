@@ -209,4 +209,70 @@
 .process-snow .snow-card--right.anim.active {
   transform: translateX(0);
   opacity: 1;
+}
+
+.faq-snow__title {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+.faq-snow__accordion,
+.faq-snow .accordion {
+  max-width: 1000px;
+  width: 100%;
+  border-bottom: 1px solid #000;
+  margin: 0 auto;
+}
+.faq-snow__accordion__button,
+.faq-snow .accordion__button {
+  border: none;
+  padding: 20px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.faq-snow__accordion__button span,
+.faq-snow .accordion__button span {
+  display: inline-block;
+  border: 1px solid #000;
+  border-radius: 50%;
+  color: #000;
+  max-width: 30px;
+  width: 100%;
+  height: 30px;
+  transform: rotate(0);
+  transition: 0.7s ease-in-out;
+}
+.faq-snow__accordion__button svg,
+.faq-snow .accordion__button svg {
+  width: 100%;
+  height: 100%;
+}
+.faq-snow__accordion__button.active span,
+.faq-snow .accordion__button.active span {
+  transform: rotate(45deg);
+  transition: 0.7s ease-in-out;
+}
+.faq-snow__accordion__body,
+.faq-snow .accordion__body {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.7s ease-in-out;
+  max-width: 960px;
+  margin: 0 auto 20px;
+  width: 100%;
+}
+.faq-snow__accordion__body--hidden,
+.faq-snow .accordion__body--hidden {
+  max-height: 0;
+  margin: 0 auto;
+}
+.faq-snow__accordion .accordion__body:not(.accordion__body--hidden),
+.faq-snow .accordion .accordion__body:not(.accordion__body--hidden) {
+  max-height: 500px;
+}
+.faq-snow .accordion--first {
+  border-top: 1px solid #000;
 }/*# sourceMappingURL=snow.css.map */

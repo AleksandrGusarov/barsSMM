@@ -140,7 +140,7 @@ document.body.onload = function(){
     {
         preloader.classList.add('hide');
     }
-    }, 1500);
+    }, 1000);
 }
 
 //contact popup open
@@ -150,10 +150,8 @@ document.addEventListener('DOMContentLoaded', function() {
   var menuItems = document.querySelectorAll('.menu-item');
 
   menuOpenButton.addEventListener('click', function() {
-    menuItems.forEach(function(item, index) {
-      setTimeout(function() {
-        item.classList.toggle('show');
-      }, index * 300); // Задержка увеличена до 100 миллисекунд
+    menuItems.forEach(function(item) {
+      item.classList.toggle('show');
     });
 
     menuOpenButton.classList.toggle('hide');
@@ -180,3 +178,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+//accordion faq hidden answer
+document.addEventListener('DOMContentLoaded', function () {
+    const accordionButtons = document.querySelectorAll('.accordion__button');
+
+    accordionButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        const accordionBody = this.nextElementSibling;
+
+        // Переключаем класс для скрытия/отображения тела ответа
+        accordionBody.classList.toggle('accordion__body--hidden');
+
+        // Переключаем класс для поворота svg при раскрытии
+        this.classList.toggle('active', !accordionBody.classList.contains('accordion__body--hidden'));
+      });
+    });
+  });
