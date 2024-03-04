@@ -1,0 +1,279 @@
+.banner-interpanel {
+  background-image: url(../img/black-bg.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  min-height: 770px;
+  background-position: top;
+  overflow: hidden;
+  margin-top: -210px;
+  padding: 300px 0 0 0;
+  position: relative;
+}
+.banner-interpanel::after {
+  content: "";
+  background: rgba(0, 0, 0, 0.55);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.banner-interpanel__wrapper {
+  padding-top: 60px;
+  position: relative;
+  z-index: 3;
+}
+.banner-interpanel__title {
+  font-size: 48px;
+  text-align: center;
+  color: #fff;
+  transform: translateX(-500px);
+  opacity: 0;
+  transition: 1.5s ease-out;
+  transition-delay: 1.3s;
+  margin-bottom: 50px;
+}
+.banner-interpanel__title.anim.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+.banner-interpanel__description {
+  position: relative;
+  max-width: 740px;
+  left: 10%;
+  width: 100%;
+  color: #fff;
+  font-size: 20px;
+  line-height: 130%;
+  transform: translateX(-330px);
+  opacity: 0;
+  margin-bottom: 30px;
+  transition: 2s ease-out;
+  transition-delay: 2s;
+}
+.banner-interpanel__description--extra {
+  max-width: 510px;
+  right: 10%;
+  width: 100%;
+  color: #fff;
+  font-size: 20px;
+  line-height: 130%;
+  position: absolute;
+  transform: translateX(300px);
+  opacity: 0;
+  transition: 1.5s ease-out;
+  transition-delay: 2.5s;
+}
+.banner-interpanel__description--extra.anim.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+.banner-interpanel__description.anim.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.benefit-interpanel__wrapper {
+  position: relative;
+}
+.benefit-interpanel__title {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 50px;
+  transform: translateY(-75px);
+  transition: 1.5s ease-out;
+  transition-delay: 3s;
+  opacity: 0;
+}
+.benefit-interpanel__title.anim.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+.benefit-interpanel__list {
+  max-width: 550px;
+  width: 100%;
+  padding: 15px;
+  border-radius: 7px;
+  position: relative;
+  left: 60%;
+  transform: translateX(80px);
+  transition: 1.7s ease-out;
+  transition-delay: 3.2s;
+  opacity: 0;
+}
+.benefit-interpanel__list.anim.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+.benefit-interpanel__item {
+  margin-bottom: 20px;
+}
+.benefit-interpanel__item h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.benefit-interpanel__item p {
+  font-size: 18px;
+  line-height: 130%;
+}
+.benefit-interpanel__img {
+  max-width: 540px;
+  width: 100%;
+  position: absolute;
+  left: 10%;
+  top: 25%;
+  border-radius: 7px;
+  overflow: hidden;
+  transform: translateX(-80px);
+  transition: 1.3s ease-out;
+  transition-delay: 3.2s;
+  opacity: 0;
+}
+.benefit-interpanel__img img {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.benefit-interpanel__img.anim.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.process-interpanel__wrapper {
+  position: relative;
+}
+.process-interpanel__title {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+.process-interpanel__card,
+.process-interpanel .interpanel-card {
+  max-width: 1250px;
+  width: 100%;
+  margin: 0 auto 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.process-interpanel__card:nth-child(2n),
+.process-interpanel .interpanel-card:nth-child(2n) {
+  flex-direction: row-reverse;
+}
+.process-interpanel__card__wrapper-title,
+.process-interpanel .interpanel-card__wrapper-title {
+  width: 59%;
+}
+.process-interpanel__card__title,
+.process-interpanel .interpanel-card__title {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.process-interpanel__card__text,
+.process-interpanel .interpanel-card__text {
+  font-size: 18px;
+  line-height: 130%;
+}
+.process-interpanel__card__img,
+.process-interpanel .interpanel-card__img {
+  max-width: 460px;
+  width: 100%;
+  border-radius: 7px;
+  overflow: hidden;
+}
+.process-interpanel__card__img img,
+.process-interpanel .interpanel-card__img img {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.process-interpanel .interpanel-card--left {
+  transform: translateX(100px);
+  transition: 1.7s ease-out;
+  opacity: 0;
+  transition-delay: 0.2s;
+}
+.process-interpanel .interpanel-card--left.anim.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+.process-interpanel .interpanel-card--right {
+  transform: translateX(-100px);
+  transition: 1.7s ease-out;
+  opacity: 0;
+  transition-delay: 0.2s;
+}
+.process-interpanel .interpanel-card--right.anim.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.faq-interpanel__title {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+.faq-interpanel__accordion,
+.faq-interpanel .accordion {
+  max-width: 1000px;
+  width: 100%;
+  border-bottom: 1px solid #000;
+  margin: 0 auto;
+}
+.faq-interpanel__accordion__button,
+.faq-interpanel .accordion__button {
+  border: none;
+  padding: 20px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.faq-interpanel__accordion__button span,
+.faq-interpanel .accordion__button span {
+  display: inline-block;
+  border: 1px solid #000;
+  border-radius: 50%;
+  color: #000;
+  max-width: 30px;
+  width: 100%;
+  height: 30px;
+  transform: rotate(0);
+  transition: 0.7s ease-in-out;
+}
+.faq-interpanel__accordion__button svg,
+.faq-interpanel .accordion__button svg {
+  width: 100%;
+  height: 100%;
+}
+.faq-interpanel__accordion__button.active span,
+.faq-interpanel .accordion__button.active span {
+  transform: rotate(45deg);
+  transition: 0.7s ease-in-out;
+}
+.faq-interpanel__accordion__body,
+.faq-interpanel .accordion__body {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.7s ease-in-out;
+  max-width: 960px;
+  margin: 0 auto 20px;
+  width: 100%;
+}
+.faq-interpanel__accordion__body--hidden,
+.faq-interpanel .accordion__body--hidden {
+  max-height: 0;
+  margin: 0 auto;
+}
+.faq-interpanel__accordion .accordion__body:not(.accordion__body--hidden),
+.faq-interpanel .accordion .accordion__body:not(.accordion__body--hidden) {
+  max-height: 500px;
+}
+.faq-interpanel .accordion--first {
+  border-top: 1px solid #000;
+}/*# sourceMappingURL=interpanel.css.map */
